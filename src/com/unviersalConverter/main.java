@@ -1,4 +1,4 @@
-package com.universalConverter.model;
+package com.unviersalConverter;
 
 import javax.swing.JFrame;
 

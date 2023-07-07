@@ -37,7 +37,10 @@ public class MenuFrame extends JFrame {
 	 */
 	public MenuFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 543, 304);
+		setBounds(100, 100, 550, 300);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) contentPane.getLayout();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,7 +51,7 @@ public class MenuFrame extends JFrame {
 		TemperatureButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				com.universalConverter.model.main.setVisible(com.universalConverter.model.main.getTemperatureFrame(), true);
+				com.unviersalConverter.main.setVisible(com.unviersalConverter.main.getTemperatureFrame(), true);
 			}
 		});
 		
@@ -58,9 +61,10 @@ public class MenuFrame extends JFrame {
 		currencyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				com.universalConverter.model.main.setVisible(com.universalConverter.model.main.getTemperatureFrame(), true);
+				com.unviersalConverter.main.setVisible(com.unviersalConverter.main.getTemperatureFrame(), true);
 			}
 		});
+		
 		currencyButton.setLocation(1, 100);
 		contentPane.add(currencyButton);
 	}

@@ -1,6 +1,7 @@
 package com.universalConverter.view;
 
-import java.awt.BorderLayout;
+import com.universalConverter.main;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -51,7 +52,7 @@ public class MenuFrame extends JFrame {
 		TemperatureButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				com.unviersalConverter.main.setVisible(com.unviersalConverter.main.getTemperatureFrame(), true);
+				main.setVisible(main.getTemperatureFrame(), true);
 			}
 		});
 		
@@ -61,7 +62,7 @@ public class MenuFrame extends JFrame {
 		currencyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				com.unviersalConverter.main.setVisible(com.unviersalConverter.main.getTemperatureFrame(), true);
+				main.setVisible(main.getTemperatureFrame(), true);
 			}
 		});
 		

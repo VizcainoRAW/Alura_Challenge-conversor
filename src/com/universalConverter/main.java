@@ -1,4 +1,4 @@
-package com.unviersalConverter;
+package com.universalConverter;
 
 import javax.swing.JFrame;
 

@@ -1,12 +1,8 @@
 package com.universalConverter.model;
 
-import java.awt.*;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import com.universalConverter.*;
+import javax.swing.*;
+import java.util.ArrayList;
 import javax.swing.border.EmptyBorder;
 
 
@@ -23,9 +19,8 @@ public abstract class  ConverterFrame extends JFrame{
 	private JTextField firstTextField=new JTextField();
 	private JTextField secondTextField=new JTextField();
 	
-	private JComboBox firstComboBox=new JComboBox();
-	private JComboBox secondComboBox=new JComboBox();
-	
+	private JComboBox<?> firstComboBox=new JComboBox();
+	private JComboBox<?> secondComboBox=new JComboBox();
 	
 	
 	public ConverterFrame() {
@@ -56,11 +51,31 @@ public abstract class  ConverterFrame extends JFrame{
 		
 		JButton backToMenu = new JButton("Back");
 		contentPane.add(backToMenu);
+		backToMenu.setBounds(10,10,90,25);
 		backToMenu.addActionListener(e -> backToMenu());
 		
 	}
 	
+	public ConverterFrame(Class <? extends Unit> unit) {
+		this();
+		this.fillConverterComboBox(unit);
+		
+	}
 	
+	
+	public void fillComboBox(Class<? extends Unit> unit, JComboBox comboBox) {
+		ArrayList<? extends Unit> list = UnitList.getListByType(unit);
+		for(Unit item :list) {
+			comboBox.addItem(item);
+		}
+		
+	}
+	
+	public void fillConverterComboBox(Class<? extends Unit> unit){
+		fillComboBox(unit, this.getFirtsComboBox());
+		fillComboBox(unit, this.getSecondComboBox());
+		
+	}
 	
 	public JTextField getFirstTextField() {
 		return firstTextField;
@@ -124,7 +139,7 @@ public abstract class  ConverterFrame extends JFrame{
 
 	public void backToMenu() {
 		setVisible(false);
-		com.universalConverter.main.setVisible(com.universalConverter.main.getMenu(), true);
+		main.setVisible(main.getMenu(), true);
 	}
 
 }

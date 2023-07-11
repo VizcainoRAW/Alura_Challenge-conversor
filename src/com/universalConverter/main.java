@@ -1,19 +1,27 @@
 package com.universalConverter;
 
+
+
 import javax.swing.JFrame;
 
-import com.universalConverter.view.CurrencyConverterFrame;
 import com.universalConverter.view.MenuFrame;
+import com.universalConverter.view.CurrencyConverterFrame;
 import com.universalConverter.view.TemperatureConverterFrame;
+
+
 
 public class main {
 	private static MenuFrame menu =new MenuFrame();
+	private static UnitList unitList=new UnitList();
+	
 	private static CurrencyConverterFrame currencyFrame = new CurrencyConverterFrame();
 	private static TemperatureConverterFrame temperatureFrame = new TemperatureConverterFrame();
-
+	
+	
 	public static void main(String[] args) {
 		menu.setVisible(true);
 	}
+	
 	
 	public static void setVisible(JFrame frame,boolean e){
 		frame.setVisible(e);
@@ -21,6 +29,10 @@ public class main {
 
 	public static MenuFrame getMenu() {
 		return menu;
+	}
+	
+	public static void setUnitList(UnitList unitList) {
+		main.unitList = unitList;
 	}
 
 	public static CurrencyConverterFrame getCurrencyFrame() {

@@ -62,7 +62,7 @@ public class MenuFrame extends JFrame {
 		currencyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				main.setVisible(main.getTemperatureFrame(), true);
+				main.setVisible(main.getCurrencyFrame(), true);
 			}
 		});
 		

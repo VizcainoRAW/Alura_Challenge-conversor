@@ -21,7 +21,7 @@ public class UnitList {
 		unitList.add(currencyList);
 		
 		ArrayList<TemperatureUnit> temperatureList = new ArrayList<TemperatureUnit>();
-		temperatureList.add(new TemperatureUnit("Celciuns", 1));
+		temperatureList.add(new TemperatureUnit("Celsius", 1));
 		temperatureList.add(new TemperatureUnit("Kelvin", 1));
 		temperatureList.add(new TemperatureUnit("Fahrenheit", 1.8));
 		unitList.add(temperatureList);

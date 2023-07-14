@@ -15,8 +15,8 @@ public abstract class Unit {
 		return unit.getConverterRario()/this.getConverterRario();
 	}
 	
-	public double convertTo(Unit unit, double value) {	
-		return  this.convertTo(unit)*value;
+	public double convertTo(Unit unit, double value) {
+		return  convertTo(unit)*value;
 	}
 	
 	public String getNotation() {
@@ -43,4 +43,5 @@ public abstract class Unit {
 	public String toString() {
 		return this.notation;
 	}
+
 }

@@ -66,8 +66,17 @@ public class MenuFrame extends JFrame {
 			}
 		});
 		
-		currencyButton.setLocation(1, 100);
 		contentPane.add(currencyButton);
+		
+		Button weightButton = new Button("Weight");
+		weightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				main.setVisible(main.getWeightFrame(), true);
+			}
+		});
+		
+		contentPane.add(weightButton);
 	}
 
 }

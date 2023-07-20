@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import com.universalConverter.view.MenuFrame;
 import com.universalConverter.view.CurrencyConverterFrame;
 import com.universalConverter.view.TemperatureConverterFrame;
+import com.universalConverter.view.WeightConveterFrame;
 
 
 
@@ -16,6 +17,7 @@ public class main {
 	
 	private static CurrencyConverterFrame currencyFrame = new CurrencyConverterFrame();
 	private static TemperatureConverterFrame temperatureFrame = new TemperatureConverterFrame();
+	private static WeightConveterFrame weightFrame= new WeightConveterFrame();
 	
 	
 	public static void main(String[] args) {
@@ -23,6 +25,16 @@ public class main {
 	}
 	
 	
+	public static WeightConveterFrame getWeightFrame() {
+		return weightFrame;
+	}
+
+
+	public static void setWeightFrame(WeightConveterFrame weightFrame) {
+		main.weightFrame = weightFrame;
+	}
+
+
 	public static void setVisible(JFrame frame,boolean e){
 		frame.setVisible(e);
 	}

@@ -26,6 +26,17 @@ public class UnitList {
 		temperatureList.add(new TemperatureUnit("Fahrenheit", 1.8));
 		unitList.add(temperatureList);
 		
+		ArrayList<WeightUnit> weightList = new ArrayList<WeightUnit>();
+		weightList.add(new WeightUnit("Kilogram", 1));
+		weightList.add(new WeightUnit("Pound", 2.20462));
+		weightList.add(new WeightUnit("Ounce", 35.274));
+		weightList.add(new WeightUnit("Stone", 0.1575));
+		weightList.add(new WeightUnit("UK Ton", 0.000984));
+		weightList.add(new WeightUnit("US Ton", 0.0011));
+		weightList.add(new WeightUnit("Tonne", 0.001));
+		weightList.add(new WeightUnit("Gram", 1000));
+		weightList.add(new WeightUnit("Milligram", 1000000));
+		unitList.add(weightList);
 		
 		
 	}

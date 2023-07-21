@@ -50,6 +50,24 @@ public class UnitList {
 		timeList.add(new TimeUnit("Millisecond", 1000000 ));
 		unitList.add(timeList);
 		
+		ArrayList<VolumeUnit> volumeList = new ArrayList<VolumeUnit>();
+		volumeList.add(new VolumeUnit("Liter", 1));
+		volumeList.add(new VolumeUnit("Milliliter", 1000));
+		volumeList.add(new VolumeUnit("Cubic Meter", (1.0/1000) ));
+		volumeList.add(new VolumeUnit("Cubic Centimeter", 1000 ));
+		volumeList.add(new VolumeUnit("Cubic Foot", (1.0/28.317) ));
+		volumeList.add(new VolumeUnit("Cubic Inch", 61.024 ));
+		volumeList.add(new VolumeUnit("Fluit Ounce", 33.814 ));
+		volumeList.add(new VolumeUnit("UK Gallon", (1.0/4.546) ));
+		volumeList.add(new VolumeUnit("UK Quart", 1.136 ));
+		volumeList.add(new VolumeUnit("UK Pint", 1.75975 ));
+		volumeList.add(new VolumeUnit("UK Cup", 3.52 ));
+		volumeList.add(new VolumeUnit("US Gallon", (1.0/3.785) ));
+		volumeList.add(new VolumeUnit("US Quart", 1.057 ));
+		volumeList.add(new VolumeUnit("US Pint", 2.113 ));
+		volumeList.add(new VolumeUnit("US Cup", 4.16667 ));
+		unitList.add(volumeList);
+		
 	}
 	
 	public static ArrayList<? extends Unit> getListByType(Class<? extends Unit> unitClass){

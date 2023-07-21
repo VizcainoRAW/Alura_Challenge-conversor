@@ -87,6 +87,16 @@ public class MenuFrame extends JFrame {
 		});
 		
 		contentPane.add(timeButton);
+		
+		Button volumeButton = new Button("Volume");
+		volumeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				main.setVisible(main.getVolumeFrame(), true);
+			}
+		});
+		
+		contentPane.add(volumeButton);
 	}
 
 }

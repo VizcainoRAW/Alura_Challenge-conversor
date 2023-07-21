@@ -8,6 +8,7 @@ import com.universalConverter.view.MenuFrame;
 import com.universalConverter.view.CurrencyConverterFrame;
 import com.universalConverter.view.TemperatureConverterFrame;
 import com.universalConverter.view.TimeConverterFrame;
+import com.universalConverter.view.VolumeConverterFrame;
 import com.universalConverter.view.WeightConverterFrame;
 
 
@@ -20,12 +21,23 @@ public class main {
 	private static TemperatureConverterFrame temperatureFrame = new TemperatureConverterFrame();
 	private static WeightConverterFrame weightFrame= new WeightConverterFrame();
 	private static TimeConverterFrame timeFrame= new TimeConverterFrame();
+	private static VolumeConverterFrame volumeFrame= new VolumeConverterFrame();
 	
 	public static void main(String[] args) {
 		main.setVisible(menu, true);
 	}
 	
 	
+	public static VolumeConverterFrame getVolumeFrame() {
+		return volumeFrame;
+	}
+
+
+	public static void setVolumeFrame(VolumeConverterFrame volumeFrame) {
+		main.volumeFrame = volumeFrame;
+	}
+
+
 	public static TimeConverterFrame getTimeFrame() {
 		return timeFrame;
 	}

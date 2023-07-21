@@ -38,6 +38,17 @@ public class UnitList {
 		weightList.add(new WeightUnit("Milligram", 1000000));
 		unitList.add(weightList);
 		
+		ArrayList<TimeUnit> timeList = new ArrayList<TimeUnit>();
+		timeList.add(new TimeUnit("Second", 1));
+		timeList.add(new TimeUnit("Minute", (1.0/60) ));
+		timeList.add(new TimeUnit("Hour", (1.0/3600) ));
+		timeList.add(new TimeUnit("Day", (1.0/86400) ));
+		timeList.add(new TimeUnit("Week", (1.0/604800) ));
+		timeList.add(new TimeUnit("Month", (1.0/2628000000L) ));
+		timeList.add(new TimeUnit("Year", (1.0/31540000000L) ));
+		timeList.add(new TimeUnit("Millisecond", 1000 ));
+		timeList.add(new TimeUnit("Millisecond", 1000000 ));
+		unitList.add(timeList);
 		
 	}
 	

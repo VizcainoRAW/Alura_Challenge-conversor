@@ -77,6 +77,16 @@ public class MenuFrame extends JFrame {
 		});
 		
 		contentPane.add(weightButton);
+		
+		Button timeButton = new Button("Time");
+		timeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				main.setVisible(main.getTimeFrame(), true);
+			}
+		});
+		
+		contentPane.add(timeButton);
 	}
 
 }

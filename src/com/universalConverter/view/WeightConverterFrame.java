@@ -3,9 +3,9 @@ package com.universalConverter.view;
 import com.universalConverter.model.ConverterFrame;
 import com.universalConverter.model.WeightUnit;
 
-public class WeightConveterFrame extends ConverterFrame {
+public class WeightConverterFrame extends ConverterFrame {
 	
-	public WeightConveterFrame() {
+	public WeightConverterFrame() {
 		super(WeightUnit.class);
 	}
 }

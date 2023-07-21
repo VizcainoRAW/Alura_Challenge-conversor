@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 import com.universalConverter.view.MenuFrame;
 import com.universalConverter.view.CurrencyConverterFrame;
 import com.universalConverter.view.TemperatureConverterFrame;
-import com.universalConverter.view.WeightConveterFrame;
+import com.universalConverter.view.TimeConverterFrame;
+import com.universalConverter.view.WeightConverterFrame;
 
 
 
@@ -17,20 +18,30 @@ public class main {
 	
 	private static CurrencyConverterFrame currencyFrame = new CurrencyConverterFrame();
 	private static TemperatureConverterFrame temperatureFrame = new TemperatureConverterFrame();
-	private static WeightConveterFrame weightFrame= new WeightConveterFrame();
-	
+	private static WeightConverterFrame weightFrame= new WeightConverterFrame();
+	private static TimeConverterFrame timeFrame= new TimeConverterFrame();
 	
 	public static void main(String[] args) {
-		menu.setVisible(true);
+		main.setVisible(menu, true);
 	}
 	
 	
-	public static WeightConveterFrame getWeightFrame() {
+	public static TimeConverterFrame getTimeFrame() {
+		return timeFrame;
+	}
+
+
+	public static void setTimeFrame(TimeConverterFrame timeFrame) {
+		main.timeFrame = timeFrame;
+	}
+
+
+	public static WeightConverterFrame getWeightFrame() {
 		return weightFrame;
 	}
 
 
-	public static void setWeightFrame(WeightConveterFrame weightFrame) {
+	public static void setWeightFrame(WeightConverterFrame weightFrame) {
 		main.weightFrame = weightFrame;
 	}
 

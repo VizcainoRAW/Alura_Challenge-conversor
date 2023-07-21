@@ -4,14 +4,7 @@ package com.universalConverter;
 
 import javax.swing.JFrame;
 
-import com.universalConverter.view.MenuFrame;
-import com.universalConverter.view.CurrencyConverterFrame;
-import com.universalConverter.view.TemperatureConverterFrame;
-import com.universalConverter.view.TimeConverterFrame;
-import com.universalConverter.view.VolumeConverterFrame;
-import com.universalConverter.view.WeightConverterFrame;
-
-
+import com.universalConverter.view.*;
 
 public class main {
 	private static MenuFrame menu =new MenuFrame();
@@ -22,11 +15,20 @@ public class main {
 	private static WeightConverterFrame weightFrame= new WeightConverterFrame();
 	private static TimeConverterFrame timeFrame= new TimeConverterFrame();
 	private static VolumeConverterFrame volumeFrame= new VolumeConverterFrame();
+	private static LenghtConverterFrame lenghtFrame= new LenghtConverterFrame();
 	
 	public static void main(String[] args) {
 		main.setVisible(menu, true);
 	}
 	
+	public static LenghtConverterFrame getLenghtFrame() {
+		return lenghtFrame;
+	}
+
+
+	public static void setLenghtFrame(LenghtConverterFrame lenghtFrame) {
+		main.lenghtFrame = lenghtFrame;
+	}
 	
 	public static VolumeConverterFrame getVolumeFrame() {
 		return volumeFrame;

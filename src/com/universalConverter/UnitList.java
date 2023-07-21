@@ -68,6 +68,18 @@ public class UnitList {
 		volumeList.add(new VolumeUnit("US Cup", 4.16667 ));
 		unitList.add(volumeList);
 		
+		ArrayList<LenghtUnit> lenghtList = new ArrayList<LenghtUnit>();
+		lenghtList.add(new LenghtUnit("Meter", 1));
+		lenghtList.add(new LenghtUnit("Centimeter", 100));
+		lenghtList.add(new LenghtUnit("Millimeter", 1000));
+		lenghtList.add(new LenghtUnit("Kilometer", (1.0/1000) ));
+		lenghtList.add(new LenghtUnit("Mile", (1.0/1609) ));
+		lenghtList.add(new LenghtUnit("Yard", 1.094 ));
+		lenghtList.add(new LenghtUnit("Foot", 3.281 ));
+		lenghtList.add(new LenghtUnit("Inch", 39.37 ));
+		lenghtList.add(new LenghtUnit("Natural Mile", (1.0/1852) ));
+		unitList.add(lenghtList);
+		
 	}
 	
 	public static ArrayList<? extends Unit> getListByType(Class<? extends Unit> unitClass){

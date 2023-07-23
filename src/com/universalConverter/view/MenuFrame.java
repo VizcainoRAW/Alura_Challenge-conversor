@@ -1,18 +1,19 @@
 package com.universalConverter.view;
 
 import com.universalConverter.main;
+import com.universalConverter.model.*;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Button;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.border.EmptyBorder;
+
+
 
 public class MenuFrame extends JFrame {
+	
 	
 
 	private JPanel contentPane;
@@ -38,75 +39,86 @@ public class MenuFrame extends JFrame {
 	 */
 	public MenuFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 360, 240);
+		setBounds(100, 100, 550, 395);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		
 		contentPane = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) contentPane.getLayout();
+		contentPane.setLayout(null);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
-		Button TemperatureButton = new Button("Temperature");
-		TemperatureButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getTemperatureFrame(), true);
-			}
-		});
-		
-		contentPane.add(TemperatureButton);
-		
-		Button currencyButton = new Button("Currency");
-		currencyButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getCurrencyFrame(), true);
-			}
-		});
-		
-		contentPane.add(currencyButton);
-		
-		Button weightButton = new Button("Weight");
-		weightButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getWeightFrame(), true);
-			}
-		});
-		
-		contentPane.add(weightButton);
-		
-		Button timeButton = new Button("Time");
-		timeButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getTimeFrame(), true);
-			}
-		});
-		
-		contentPane.add(timeButton);
-		
-		Button volumeButton = new Button("Volume");
-		volumeButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getVolumeFrame(), true);
-			}
-		});
-		
-		contentPane.add(volumeButton);
-		
-		Button lenghtButton = new Button("Lenght");
-		lenghtButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				main.setVisible(main.getLenghtFrame(), true);
-			}
-		});
-		
-		contentPane.add(lenghtButton);
+		 ConverterButton currencyButton = new ConverterButton("Currency","currencyIcon.png");
+		 currencyButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getCurrencyFrame(), true);
+				}
+		 });
+		 currencyButton.setLocation(20, 20);
+		 contentPane.add(currencyButton);
+		 
+		 
+		 ConverterButton temperatureButton = new ConverterButton("Temperature","temperatureIcon.png");
+		 temperatureButton.setLocation(190, 20);
+		 temperatureButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getTemperatureFrame(), true);
+				}
+		 });
+		 contentPane.add(temperatureButton);
+		 
+		 
+		 ConverterButton weightButton = new ConverterButton("Weight","weightIcon.png");
+		 weightButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getWeightFrame(), true);
+				}
+		 });
+		 weightButton.setLocation(360, 20);
+		 contentPane.add(weightButton);
+		 
+		 
+		 ConverterButton timeButton = new ConverterButton("Time","timeIcon.png");
+		 timeButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getTimeFrame(), true);
+				}
+		 });
+		 timeButton.setLocation(20, 190);
+		 contentPane.add(timeButton);
+		 
+		 
+		 ConverterButton volumeButton = new ConverterButton("Volume","volumeIcon.png");
+		 volumeButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getVolumeFrame(), true);
+				}
+		 });
+		 volumeButton.setLocation(190, 190);
+		 contentPane.add(volumeButton);
+		 
+		 
+		 ConverterButton lenghtButton = new ConverterButton("Lenght","lenghtIcon.png");
+		 lenghtButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+					main.setVisible(main.getLenghtFrame(), true);
+				}
+		 });
+		 lenghtButton.setLocation(360, 190);
+		 contentPane.add(lenghtButton);
+		 
+		 
+		 
 	}
-
+	
+	
+	
+	
 }

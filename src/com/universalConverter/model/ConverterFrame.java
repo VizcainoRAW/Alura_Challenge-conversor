@@ -34,6 +34,7 @@ public abstract class ConverterFrame extends JFrame {
         setSize(this.width, this.height);
         setLocationRelativeTo(null);
         setResizable(false);
+
         
         contentPane = new JPanel();
         

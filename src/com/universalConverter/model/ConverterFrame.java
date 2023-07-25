@@ -11,7 +11,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 
-public abstract class ConverterFrame extends JFrame {
+public class ConverterFrame extends JFrame {
     
     private final int width = 480;
     private final int height = 360;
@@ -29,70 +29,83 @@ public abstract class ConverterFrame extends JFrame {
     
     
     public ConverterFrame() {
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(this.width, this.height);
-        setLocationRelativeTo(null);
-        setResizable(false);
-
-        
-        contentPane = new JPanel();
-        
-        contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
-        contentPane.setLayout(null);
-        
-        setContentPane(contentPane);
-        
-        
-        getInputTextField().setBounds(25, 60, componentWidth, componentHeight);
-        getInputComboBox().setBounds(240, 60, componentWidth, componentHeight);
-        getOutputTextField().setBounds(25, 160, componentWidth, componentHeight);
-        getOutputComboBox().setBounds(240, 160, componentWidth, componentHeight);
-        
-        contentPane.add(getInputTextField());
-        contentPane.add(getInputComboBox());
-        contentPane.add(getOutputTextField());
-        contentPane.add(getOutputComboBox());
-        
-        
-        JButton backToMenu = new JButton("Back");
-        contentPane.add(backToMenu);
-        backToMenu.setBounds(10, 10, 90, 25);
-        backToMenu.addActionListener(e -> backToMenu());
-        
-        getInputTextField().getDocument().addDocumentListener(new DocumentListener() {
-        	
-            public void insertUpdate(DocumentEvent e) {
-                updateOutputValues();
-            }
-
-            public void removeUpdate(DocumentEvent e) {
-                updateOutputValues();
-            }
-
-            public void changedUpdate(DocumentEvent e) {
-                updateOutputValues();
-            }
-        });
-
-        getInputComboBox().addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                updateOutputValues();
-            }
-        });
-        
-        getOutputComboBox().addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                updateOutputValues();
-            }
-        });
-        
+        initialize();   
     }
     
+    public ConverterFrame(String title) {
+    	super(title);
+    	initialize();
+    	
+    }
     
     public ConverterFrame(Class<? extends Unit> unit) {
         this();
         this.fillConverterComboBox(unit);
+    }
+    
+    public ConverterFrame(String title,Class<? extends Unit> unit) {
+        this(title);
+        this.fillConverterComboBox(unit);
+    }
+    
+    private void initialize() {
+    	 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         setSize(this.width, this.height);
+         setLocationRelativeTo(null);
+         setResizable(false);
+
+         
+         contentPane = new JPanel();
+         
+         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
+         contentPane.setLayout(null);
+         
+         setContentPane(contentPane);
+         
+         
+         getInputTextField().setBounds(25, 60, componentWidth, componentHeight);
+         getInputComboBox().setBounds(240, 60, componentWidth, componentHeight);
+         getOutputTextField().setBounds(25, 160, componentWidth, componentHeight);
+         getOutputComboBox().setBounds(240, 160, componentWidth, componentHeight);
+         
+         contentPane.add(getInputTextField());
+         contentPane.add(getInputComboBox());
+         contentPane.add(getOutputTextField());
+         contentPane.add(getOutputComboBox());
+         
+         
+         JButton backToMenu = new JButton("Back");
+         contentPane.add(backToMenu);
+         backToMenu.setBounds(10, 10, 90, 25);
+         backToMenu.addActionListener(e -> backToMenu());
+         
+         getInputTextField().getDocument().addDocumentListener(new DocumentListener() {
+         	
+             public void insertUpdate(DocumentEvent e) {
+                 updateOutputValues();
+             }
+
+             public void removeUpdate(DocumentEvent e) {
+                 updateOutputValues();
+             }
+
+             public void changedUpdate(DocumentEvent e) {
+                 updateOutputValues();
+             }
+         });
+
+         getInputComboBox().addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 updateOutputValues();
+             }
+         });
+         
+         getOutputComboBox().addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 updateOutputValues();
+             }
+         });
+    	
     }
     
     public double convertValue(Unit sourceUnit, Unit targetUnit, double value) {

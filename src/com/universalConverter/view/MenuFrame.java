@@ -42,6 +42,7 @@ public class MenuFrame extends JFrame {
 		setBounds(100, 100, 550, 395);
 		setResizable(false);
 		setLocationRelativeTo(null);
+		setTitle("Universal Converter - Menu");
 		
 		contentPane = new JPanel();
 		contentPane.setLayout(null);

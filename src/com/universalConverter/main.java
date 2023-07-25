@@ -1,7 +1,7 @@
 package com.universalConverter;
 
 
-
+import com.universalConverter.model.*;
 import javax.swing.JFrame;
 
 import com.universalConverter.view.*;
@@ -10,56 +10,17 @@ public class main {
 	private static MenuFrame menu =new MenuFrame();
 	private static UnitList unitList=new UnitList();
 	
-	private static CurrencyConverterFrame currencyFrame = new CurrencyConverterFrame();
-	private static TemperatureConverterFrame temperatureFrame = new TemperatureConverterFrame();
-	private static WeightConverterFrame weightFrame= new WeightConverterFrame();
-	private static TimeConverterFrame timeFrame= new TimeConverterFrame();
-	private static VolumeConverterFrame volumeFrame= new VolumeConverterFrame();
-	private static LenghtConverterFrame lenghtFrame= new LenghtConverterFrame();
+	private static ConverterFrame currencyFrame = new ConverterFrame("Currency Converter",CurrencyUnit.class);
+	private static ConverterFrame temperatureFrame = new ConverterFrame("Temperature Conveter",TemperatureUnit.class);
+	private static ConverterFrame weightFrame= new ConverterFrame("Weight Converter",WeightUnit.class);
+	private static ConverterFrame timeFrame= new ConverterFrame("Time Conveter",TimeUnit.class);
+	private static ConverterFrame volumeFrame= new ConverterFrame("Volume Converter",VolumeUnit.class);
+	private static ConverterFrame lenghtFrame= new ConverterFrame("Lenght Converter",LenghtUnit.class);
 	
 	public static void main(String[] args) {
 		main.setVisible(menu, true);
 	}
 	
-	public static LenghtConverterFrame getLenghtFrame() {
-		return lenghtFrame;
-	}
-
-
-	public static void setLenghtFrame(LenghtConverterFrame lenghtFrame) {
-		main.lenghtFrame = lenghtFrame;
-	}
-	
-	public static VolumeConverterFrame getVolumeFrame() {
-		return volumeFrame;
-	}
-
-
-	public static void setVolumeFrame(VolumeConverterFrame volumeFrame) {
-		main.volumeFrame = volumeFrame;
-	}
-
-
-	public static TimeConverterFrame getTimeFrame() {
-		return timeFrame;
-	}
-
-
-	public static void setTimeFrame(TimeConverterFrame timeFrame) {
-		main.timeFrame = timeFrame;
-	}
-
-
-	public static WeightConverterFrame getWeightFrame() {
-		return weightFrame;
-	}
-
-
-	public static void setWeightFrame(WeightConverterFrame weightFrame) {
-		main.weightFrame = weightFrame;
-	}
-
-
 	public static void setVisible(JFrame frame,boolean e){
 		frame.setVisible(e);
 	}
@@ -72,15 +33,63 @@ public class main {
 		main.unitList = unitList;
 	}
 
-	public static CurrencyConverterFrame getCurrencyFrame() {
+	public static ConverterFrame getCurrencyFrame() {
 		return currencyFrame;
 	}
 
+	public static void setCurrencyFrame(ConverterFrame currencyFrame) {
+		main.currencyFrame = currencyFrame;
+	}
 
-	public static TemperatureConverterFrame getTemperatureFrame() {
+	public static ConverterFrame getTemperatureFrame() {
 		return temperatureFrame;
 	}
 
+	public static void setTemperatureFrame(ConverterFrame temperatureFrame) {
+		main.temperatureFrame = temperatureFrame;
+	}
+
+	public static ConverterFrame getWeightFrame() {
+		return weightFrame;
+	}
+
+	public static void setWeightFrame(ConverterFrame weightFrame) {
+		main.weightFrame = weightFrame;
+	}
+
+	public static ConverterFrame getTimeFrame() {
+		return timeFrame;
+	}
+
+	public static void setTimeFrame(ConverterFrame timeFrame) {
+		main.timeFrame = timeFrame;
+	}
+
+	public static ConverterFrame getVolumeFrame() {
+		return volumeFrame;
+	}
+
+	public static void setVolumeFrame(ConverterFrame volumeFrame) {
+		main.volumeFrame = volumeFrame;
+	}
+
+	public static ConverterFrame getLenghtFrame() {
+		return lenghtFrame;
+	}
+
+	public static void setLenghtFrame(ConverterFrame lenghtFrame) {
+		main.lenghtFrame = lenghtFrame;
+	}
+
+	public static UnitList getUnitList() {
+		return unitList;
+	}
+
+	public static void setMenu(MenuFrame menu) {
+		main.menu = menu;
+	}
+	
+	
 
 	
 	

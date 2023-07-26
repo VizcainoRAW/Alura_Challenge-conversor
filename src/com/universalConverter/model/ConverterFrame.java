@@ -13,7 +13,7 @@ import javax.swing.event.DocumentListener;
 
 public class ConverterFrame extends JFrame {
     
-    private final int width = 480;
+	private final int width = 480;
     private final int height = 360;
     
     private final int componentWidth = 200;

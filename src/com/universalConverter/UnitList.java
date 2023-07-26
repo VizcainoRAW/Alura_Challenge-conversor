@@ -2,7 +2,6 @@ package com.universalConverter;
 
 import com.universalConverter.model.*;
 import java.util.ArrayList;
-import com.universalConverter.model.*;
 
 public class UnitList {
 	

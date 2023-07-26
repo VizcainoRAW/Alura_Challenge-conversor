@@ -1,10 +1,10 @@
 package com.universalConverter.view;
 
+import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
 import com.universalConverter.main;
 import com.universalConverter.model.*;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,36 +13,26 @@ import javax.swing.border.EmptyBorder;
 
 
 public class MenuFrame extends JFrame {
-	
-	
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuFrame frame = new MenuFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.S
-	 */
 	public MenuFrame() {
+		FlatArcDarkIJTheme.setup();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 395);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setTitle("Universal Converter - Menu");
+		try {
+			setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/universalConverterIcon.png")).getImage());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		
 		contentPane = new JPanel();
 		contentPane.setLayout(null);

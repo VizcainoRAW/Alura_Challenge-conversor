@@ -1,9 +1,8 @@
 package com.universalConverter;
 
-
 import com.universalConverter.model.*;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
 import com.universalConverter.view.*;
 
 public class main {
@@ -17,8 +16,19 @@ public class main {
 	private static ConverterFrame volumeFrame= new ConverterFrame("Volume Converter",VolumeUnit.class);
 	private static ConverterFrame lenghtFrame= new ConverterFrame("Lenght Converter",LenghtUnit.class);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {  
+		
+		setMenu(new MenuFrame());
+
+		getCurrencyFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/currencyIcon.png")).getImage());
+		getTemperatureFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/temperatureIcon.png")).getImage());
+		getWeightFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/weightIcon.png")).getImage());
+		getTimeFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/timeIcon.png")).getImage());
+		getVolumeFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/volumeIcon.png")).getImage());
+		getLenghtFrame().setIconImage(new ImageIcon(main.class.getResource("/com/universalConverter/media/img/lenghtIcon.png")).getImage());
+		
 		main.setVisible(menu, true);
+		 
 	}
 	
 	public static void setVisible(JFrame frame,boolean e){

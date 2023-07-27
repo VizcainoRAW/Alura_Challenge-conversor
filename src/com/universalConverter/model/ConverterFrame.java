@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -41,11 +43,14 @@ public class ConverterFrame extends JFrame {
     public ConverterFrame(Class<? extends Unit> unit) {
         this();
         this.fillConverterComboBox(unit);
+        updateOutputValues();
     }
     
     public ConverterFrame(String title,Class<? extends Unit> unit) {
         this(title);
         this.fillConverterComboBox(unit);
+        updateOutputValues();
+
     }
     
     private void initialize() {
@@ -105,7 +110,6 @@ public class ConverterFrame extends JFrame {
                  updateOutputValues();
              }
          });
-    	
     }
     
     public double convertValue(Unit sourceUnit, Unit targetUnit, double value) {
@@ -114,9 +118,15 @@ public class ConverterFrame extends JFrame {
     
     public void fillComboBox(Class<? extends Unit> unit, JComboBox comboBox) {
         ArrayList<? extends Unit> list = UnitList.getListByType(unit);
+        
+        DefaultComboBoxModel<Object> comboBoxModel = (DefaultComboBoxModel<Object>) comboBox.getModel();
+        comboBoxModel.removeAllElements();
+   
         for (Unit item : list) {
-            comboBox.addItem(item);
+        	comboBox.addItem(item);
+        	System.out.println("added: "+item);	   
         }
+        
     }
     
     public void fillConverterComboBox(Class<? extends Unit> unit) {
@@ -124,10 +134,24 @@ public class ConverterFrame extends JFrame {
         fillComboBox(unit, getOutputComboBox());
     }
     
+    
+    
     private void updateOutputValues() {
     	getInputTextField().requestFocus();
     	
+    	if(getInputComboBox().getSelectedItem() == getOutputComboBox().getSelectedItem()) {
+    		int selectedIndex = getOutputComboBox().getSelectedIndex();
+
+    		int itemCount = getOutputComboBox().getItemCount();
+    		int nextIndex = (selectedIndex + 1) % itemCount; 
+    		getOutputComboBox().setSelectedIndex(nextIndex);
+    	}
+   
+    
+
+    	
     	try {
+    		
             Double inputValue = Double.parseDouble(getInputTextField().getText());
             if (inputValue == null || inputValue.isNaN()) {
                 return;
@@ -138,9 +162,15 @@ public class ConverterFrame extends JFrame {
             
             getOutputTextField().setText(
                 String.valueOf(convertValue(inputUnit, outputUnit, inputValue)));
+            
+            
         } catch (NumberFormatException e) {
             return;
         }
+    	
+    	 
+         
+         
     }
     
     
